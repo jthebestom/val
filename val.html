@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base target="_self">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine? 💕</title>
+    <meta name="description" content="A special Valentine's Day question for Olatubosun">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'valentine-pink': '#FF69B4',
+                        'valentine-red': '#FF3366',
+                        'valentine-light': '#FFF0F5',
+                        'valentine-dark': '#CC3366',
+                        'soft-pink': '#FFE6EE',
+                        'soft-red': '#FFB6C1'
+                    },
+                    fontFamily: {
+                        'dancing': ['Dancing Script', 'cursive'],
+                        'poppins': ['Poppins', 'sans-serif']
+                    },
+                    animation: {
+                        'heartbeat': 'heartbeat 1s ease-in-out infinite',
+                        'float': 'float 3s ease-in-out infinite',
+                        'wiggle': 'wiggle 0.5s ease-in-out',
+                        'sparkle': 'sparkle 1.5s ease-in-out infinite'
+                    },
+                    keyframes: {
+                        heartbeat: {
+                            '0%, 100%': { transform: 'scale(1)' },
+                            '50%': { transform: 'scale(1.1)' }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' }
+                        },
+                        wiggle: {
+                            '0%, 100%': { transform: 'rotate(-3deg)' },
+                            '50%': { transform: 'rotate(3deg)' }
+                        },
+                        sparkle: {
+                            '0%, 100%': { opacity: '0.3' },
+                            '50%': { opacity: '1' }
+                        }
+                    },
+                    backgroundImage: {
+                        'heart-pattern': "url('data:image/svg+xml,%3Csvg width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"none\" fill-rule=\"evenodd\"%3E%3Cg fill=\"%23FF69B4\" fill-opacity=\"0.1\"%3E%3Cpath d=\"M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')"
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            overflow-x: hidden;
+        }
+        
+        .heart-decoration {
+            position: absolute;
+            font-size: 24px;
+            color: #FF69B4;
+            opacity: 0.7;
+            z-index: 1;
+            animation: float 3s ease-in-out infinite;
+            animation-delay: calc(var(--i) * 0.5s);
+        }
+        
+        .sparkle {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: #FF3366;
+            border-radius: 50%;
+            opacity: 0;
+            animation: sparkle 1.5s ease-in-out infinite;
+            animation-delay: calc(var(--j) * 0.3s);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-soft-pink via-valentine-light to-white font-poppins text-gray-800 relative ">
+    <!-- Floating hearts background -->
+    <div id="heartContainer"></div>
+    
+    <!-- Sparkles -->
+    <div id="sparkleContainer"></div>
+    
+    <div class="container mx-auto px-4 py-8 relative z-10">
+        <header class="text-center mb-8">
+            <div class="animate-float inline-block">
+                <h1 class="text-5xl md:text-6xl font-dancing text-valentine-red mb-2">
+                    💝 Happy Valentine's Day 💝
+                </h1>
+            </div>
+            <p class="text-xl text-gray-600 mt-4 fade-in">
+                A special message for someone very special...
+            </p>
+        </header>
+
+        <main class="max-w-4xl mx-auto">
+            <!-- Main content section -->
+            <div class="bg-white rounded-3xl shadow-xl p-8 md:p-12 mb-12 border-4 border-soft-red fade-in">
+                <div class="text-center mb-10">
+                    <div class="flex justify-center mb-6">
+                        <div class="animate-heartbeat text-6xl text-valentine-red">
+                            ❤️
+                        </div>
+                    </div>
+                    
+                    <h2 class="text-4xl font-dancing text-valentine-red mb-6">
+                        Dear Olatubosun,
+                    </h2>
+                    
+                    <div class="space-y-4 text-lg text-gray-700 mb-8 leading-relaxed">
+                        <p class="fade-in">
+                            Every moment with you feels like a beautiful dream that I never want to wake up from.
+                        </p>
+                        <p class="fade-in">
+                            Your smile brightens my day, your laughter is my favorite sound, and your presence makes everything better.
+                        </p>
+                        <p class="fade-in">
+                            You're the most amazing person I know, and I feel so incredibly lucky to have you in my life.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-gradient-to-r from-soft-pink to-soft-red p-6 rounded-2xl mb-10 fade-in">
+                        <h3 class="text-3xl font-dancing text-valentine-dark mb-4">
+                            So, I have one very important question...
+                        </h3>
+                        
+                        <div class="animate-heartbeat text-4xl text-valentine-dark font-bold">
+                            Will you be my Valentine?
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Yes/No buttons section -->
+                <div class="text-center space-y-6 fade-in">
+                    <p class="text-xl text-gray-600 mb-8">
+                        Please choose your answer:
+                    </p>
+                    
+                    <div class="flex flex-col md:flex-row justify-center items-center gap-8">
+                        <!-- Yes Button -->
+                        <button id="yesButton" 
+                                class="px-12 py-6 bg-gradient-to-r from-valentine-red to-valentine-pink text-white text-2xl font-bold rounded-2xl shadow-lg hover:shadow-2xl transform hover:scale-110 transition-all duration-300 hover:animate-wiggle group relative overflow-hidden">
+                            <span class="relative z-10">YES! 💖</span>
+                            <div class="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+                        </button>
+                        
+                        <!-- No Button -->
+                        <div class="relative" id="noButtonContainer">
+                            <button id="noButton" 
+                                    class="px-12 py-6 bg-gradient-to-r from-gray-300 to-gray-400 text-gray-700 text-2xl font-bold rounded-2xl shadow-lg transform transition-all duration-200 relative group">
+                                <span class="relative z-10">No 🙈</span>
+                                <div class="absolute inset-0 bg-gray-200 opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
+                            </button>
+                            <div class="text-sm text-gray-500 mt-2">
+                                (Try to click me if you can!)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Photo section -->
+            <div class="bg-white rounded-3xl shadow-xl p-8 mb-12 border-4 border-soft-pink fade-in">
+                <h3 class="text-3xl font-dancing text-valentine-red text-center mb-8">
+                    Our Happy Moments Together 💫
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="rounded-2xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
+                        <img src="assets/vl3.jpeg" 
+                             alt="Happy couple walking in a park" 
+                             class="w-full h-64 object-cover"
+                             loading="lazy">
+                        <div class="p-4 bg-soft-pink">
+                            <p class="text-center text-valentine-dark">"Every adventure with you"</p>
+                        </div>
+                    </div>
+                    <div class="rounded-2xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
+                        <img src="assets/val1.jpeg" 
+                             alt="Romantic sunset moment" 
+                             class="w-full h-64 object-cover"
+                             loading="lazy">
+                        <div class="p-4 bg-soft-pink">
+                            <p class="text-center text-valentine-dark">"Beautiful sunsets"</p>
+                        </div>
+                    </div>
+                    <div class="rounded-2xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
+                        <img src="assets/val2.jpeg" 
+                             alt="Laughing together" 
+                             class="w-full h-64 object-cover"
+                             loading="lazy">
+                        <div class="p-4 bg-soft-pink">
+                            <p class="text-center text-valentine-dark">"Endless laughter"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Romantic quote -->
+            <div class="text-center p-8 bg-gradient-to-r from-valentine-red to-valentine-pink rounded-3xl shadow-xl fade-in">
+                <blockquote class="text-white text-2xl italic font-dancing">
+                    "I love you not only for what you are, but for what I am when I am with you."
+                </blockquote>
+                <p class="text-soft-pink mt-4 text-lg">- For My Dearest Olatubosun</p>
+            </div>
+        </main>
+
+        <!-- Success message (hidden by default) -->
+        <div id="successMessage" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 hidden">
+            <div class="bg-white rounded-3xl p-10 max-w-md mx-4 text-center transform scale-95 animate-heartbeat">
+                <div class="text-6xl text-valentine-red mb-6">🎉💖🎊</div>
+                <h3 class="text-4xl font-dancing text-valentine-red mb-4">YAY! You said YES!</h3>
+                <p class="text-xl text-gray-700 mb-6">
+                    I'm the happiest person in the world right now! 
+                    <br>Can't wait to spend Valentine's Day with you! 💕
+                </p>
+                <p class="text-lg text-gray-600">
+                    You've made my day perfect! ❤️
+                </p>
+                <button id="closeSuccess" class="mt-8 px-8 py-3 bg-valentine-red text-white rounded-full hover:bg-valentine-dark transition-colors duration-300">
+                    Close Message
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-gray-100 mt-20 py-8 text-center fade-in">
+        <div class="container mx-auto px-4">
+            <p class="text-gray-600">
+                Made with 💖 for Olatubosun | Valentine's Day 2026
+            </p>
+            <div class="mt-4 space-x-6">
+                <span class="text-2xl">
+                    💕❤️💝💘💓
+                </span>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Create floating hearts
+        const heartContainer = document.getElementById('heartContainer');
+        for (let i = 0; i < 20; i++) {
+            const heart = document.createElement('div');
+            heart.className = 'heart-decoration';
+            heart.style.left = `${Math.random() * 100}%`;
+            heart.style.top = `${Math.random() * 100}%`;
+            heart.style.setProperty('--i', i);
+            heart.innerHTML = '❤️';
+            heartContainer.appendChild(heart);
+        }
+        
+        // Create sparkles
+        const sparkleContainer = document.getElementById('sparkleContainer');
+        for (let j = 0; j < 30; j++) {
+            const sparkle = document.createElement('div');
+            sparkle.className = 'sparkle';
+            sparkle.style.left = `${Math.random() * 100}%`;
+            sparkle.style.top = `${Math.random() * 100}%`;
+            sparkle.style.setProperty('--j', j);
+            sparkleContainer.appendChild(sparkle);
+        }
+        
+        // Define movement patterns for the "No" button
+        const movementPatterns = [
+            { x: '50px', y: '50px' },
+            { x: '-80px', y: '30px' },
+            { x: '60px', y: '-70px' },
+            { x: '-40px', y: '90px' },
+            { x: '100px', y: '-30px' },
+            { x: '-100px', y: '-50px' },
+            { x: '70px', y: '80px' },
+            { x: '-60px', y: '-100px' }
+        ];
+        
+        let currentPattern = 0;
+        let isMoving = false;
+        const noButton = document.getElementById('noButton');
+        const noButtonContainer = document.getElementById('noButtonContainer');
+        const yesButton = document.getElementById('yesButton');
+        const successMessage = document.getElementById('successMessage');
+        const closeSuccess = document.getElementById('closeSuccess');
+        
+        // Function to move the "No" button randomly
+        function moveNoButton() {
+            if (isMoving) return;
+            
+            isMoving = true;
+            
+            // Get button dimensions and container dimensions
+            const buttonRect = noButton.getBoundingClientRect();
+            const containerRect = noButtonContainer.getBoundingClientRect();
+            
+            // Calculate max movement within container
+            const maxX = containerRect.width - buttonRect.width;
+            const maxY = containerRect.height - buttonRect.height;
+            
+            // Get random position
+            const pattern = movementPatterns[currentPattern];
+            currentPattern = (currentPattern + 1) % movementPatterns.length;
+            
+            // Apply movement with transform
+            noButton.style.transform = `translate(${pattern.x}, ${pattern.y})`;
+            noButton.style.transition = 'transform 0.3s ease-out';
+            
+            // Reset movement flag after animation
+            setTimeout(() => {
+                isMoving = false;
+            }, 300);
+            
+            // Add playful text changes
+            const noMessages = [
+                "Are you sure? 🙈",
+                "Try again! 😉",
+                "You can do it! 🎯",
+                "Almost got me! 🏃‍♂️",
+                "So close! 🔥",
+                "One more try! 💪",
+                "Getting warmer! 🌡️"
+            ];
+            
+            noButton.innerHTML = `<span class="relative z-10">${noMessages[Math.floor(Math.random() * noMessages.length)]}</span><div class="absolute inset-0 bg-gray-200 opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>`;
+        }
+        
+        // Add event listeners for "No" button
+        noButton.addEventListener('mouseenter', moveNoButton);
+        noButton.addEventListener('touchstart', moveNoButton);
+        noButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            moveNoButton();
+        });
+        
+        // Add additional movement on attempt to click
+        noButton.addEventListener('mousedown', moveNoButton);
+        
+        // Yes button functionality
+        yesButton.addEventListener('click', () => {
+            successMessage.classList.remove('hidden');
+            successMessage.classList.add('flex');
+            
+            // Add confetti effect
+            createConfetti();
+        });
+        
+        closeSuccess.addEventListener('click', () => {
+            successMessage.classList.add('hidden');
+            successMessage.classList.remove('flex');
+        });
+        
+        // Create confetti effect
+        function createConfetti() {
+            const confettiContainer = document.createElement('div');
+            confettiContainer.className = 'fixed inset-0 pointer-events-none z-40';
+            document.body.appendChild(confettiContainer);
+            
+            const confettiColors = ['#FF3366', '#FF69B4', '#FFB6C1', '#FFFFFF', '#FFD700'];
+            const confettiShapes = ['❤️', '💖', '💕', '💘', '💝', '✨', '🎉'];
+            
+            for (let i = 0; i < 100; i++) {
+                const confetti = document.createElement('div');
+                confetti.style.position = 'absolute';
+                confetti.style.left = `${Math.random() * 100}%`;
+                confetti.style.top = '-50px';
+                confetti.style.fontSize = `${Math.random() * 24 + 16}px`;
+                confetti.style.opacity = '0.8';
+                confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
+                confetti.style.animation = `float ${Math.random() * 3 + 2}s ease-out forwards`;
+                confetti.innerHTML = confettiShapes[Math.floor(Math.random() * confettiShapes.length)];
+                confetti.style.color = confettiColors[Math.floor(Math.random() * confettiColors.length)];
+                confettiContainer.appendChild(confetti);
+                
+                // Remove confetti after animation
+                setTimeout(() => {
+                    confetti.remove();
+                }, 3000);
+            }
+            
+            // Remove container after animation
+            setTimeout(() => {
+                confettiContainer.remove();
+            }, 3500);
+        }
+        
+        // Add some random movements to the "No" button periodically
+        setInterval(() => {
+            if (Math.random() > 0.7 && !isMoving) {
+                moveNoButton();
+            }
+        }, 3000);
+        
+        // Add scroll animations
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeIn 1s ease-out';
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        fadeElements.forEach(element => {
+            observer.observe(element);
+        });
+        
+        // Add heartbeat effect to main heading on hover
+        const mainHeading = document.querySelector('header h1');
+        mainHeading.addEventListener('mouseenter', () => {
+            mainHeading.classList.add('animate-heartbeat');
+        });
+        
+        mainHeading.addEventListener('mouseleave', () => {
+            setTimeout(() => {
+                mainHeading.classList.remove('animate-heartbeat');
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
